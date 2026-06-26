@@ -1,0 +1,142 @@
+.carousel {
+  padding: 0.625rem 0 1.25rem;
+}
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.625rem;
+  border-radius: 1.5rem;
+  background: var(--color-history-bar-bg);
+  border: 1px solid var(--color-history-bar-border);
+  overflow: hidden;
+}
+
+.historyCard {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+  min-width: 5.5rem;
+  height: 4rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.divider {
+  flex-shrink: 0;
+  width: 1px;
+  height: 3.25rem;
+  margin: 0 0.625rem;
+  background: var(--color-history-divider);
+}
+
+.scrollWrap {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.track {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-right: 2.5rem;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.fadeRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 4.5rem;
+  background: linear-gradient(
+    to left,
+    var(--color-history-bar-bg) 35%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.historyTitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.viewAll {
+  font-size: 0.625rem;
+  color: var(--color-text-subtle);
+  text-align: center;
+  transition: color 0.2s;
+}
+
+.viewAll:hover {
+  color: var(--color-text-muted);
+}
+
+.thumbnail {
+  flex-shrink: 0;
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  background: var(--color-thumbnail-bg);
+  border: 1px solid var(--color-image-border);
+  transition: border-color 0.25s ease;
+}
+
+.thumbnailImage {
+  object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    padding: 0 2rem;
+  }
+
+  .bar {
+    padding: 0.625rem 0.75rem;
+    border-radius: 1.75rem;
+  }
+
+  .historyCard {
+    min-width: 6rem;
+    height: 4.5rem;
+    border-radius: 0.875rem;
+  }
+
+  .divider {
+    height: 3.75rem;
+    margin: 0 0.75rem;
+  }
+
+  .thumbnail {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 0.75rem;
+  }
+
+  .track {
+    gap: 0.625rem;
+  }
+}

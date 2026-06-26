@@ -1,0 +1,105 @@
+.grid {
+  flex: 1;
+  min-width: 0;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.promptColumn {
+  width: 100%;
+}
+
+.imagesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.875rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.promptSkeleton {
+  width: 100%;
+  min-height: 10rem;
+  border-radius: 1.125rem;
+  background: linear-gradient(
+    90deg,
+    var(--color-skeleton) 25%,
+    var(--color-skeleton-shine) 50%,
+    var(--color-skeleton) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 12rem;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  background: var(--color-empty-bg);
+  border: 1px dashed var(--color-empty-border);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (min-width: 640px) {
+  .imagesGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+
+  .promptColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 14rem;
+    min-width: 14rem;
+    max-width: 15.5rem;
+    flex-shrink: 0;
+  }
+
+  .imagesGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .promptColumn {
+    width: 15.5rem;
+    min-width: 15.5rem;
+    max-width: 17rem;
+  }
+
+  .inner {
+    gap: 1.5rem;
+  }
+
+  .imagesGrid {
+    gap: 1.125rem;
+  }
+}

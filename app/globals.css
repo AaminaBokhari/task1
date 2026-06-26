@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+:root {
+  --color-page-bg: #fdf6f2;
+  --color-panel-bg: #f5ebe6;
+  --color-prompt-bg: #f5ebe6;
+  --color-surface: #ffffff;
+  --color-surface-muted: rgba(255, 255, 255, 0.45);
+  --color-border: rgba(0, 0, 0, 0.06);
+  --color-border-strong: rgba(0, 0, 0, 0.1);
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #7a7a7a;
+  --color-text-subtle: #9a9a9a;
+  --color-text-placeholder: #b8b8b8;
+  --color-icon: #8a8a8a;
+  --color-icon-action: #5a5a5a;
+  --color-skeleton: #ece6e1;
+  --color-skeleton-shine: #f5efea;
+  --color-dropdown-hover: #f5efea;
+  --color-thumbnail-bg: #e8e2dc;
+  --color-empty-bg: rgba(255, 255, 255, 0.6);
+  --color-empty-border: rgba(0, 0, 0, 0.1);
+  --color-shadow: rgba(0, 0, 0, 0.06);
+  --color-accent: #e8a08c;
+  --color-prompt-outline: rgba(0, 0, 0, 0.1);
+  --color-history-bar-bg: #fdf8f6;
+  --color-history-bar-border: rgba(0, 0, 0, 0.06);
+  --color-history-divider: rgba(0, 0, 0, 0.08);
+  --color-nav-progress-bg: #f4ece7;
+  --color-nav-progress-border: rgba(0, 0, 0, 0.08);
+  --color-nav-progress-fill: #e8a08c;
+  --color-nav-icon: #1a1a1a;
+  --color-nav-icon-muted: #8a8a8a;
+  --color-surface-elevated: #ffffff;
+  --color-prompt-shadow: transparent;
+  --color-panel-shadow: none;
+  --color-accent-start: #e8a08c;
+  --color-accent-end: #e07a62;
+  --color-accent-shadow: rgba(224, 122, 98, 0.3);
+  --color-header-border: transparent;
+  --color-image-border: transparent;
+  --color-logo: #000000;
+  --color-focus-ring: rgba(224, 122, 98, 0.45);
+  --color-tab-track-bg: #ffffff;
+  --space-page-x: 1.5rem;
+  --space-section: 1.25rem;
+  --background: var(--color-page-bg);
+  --foreground: var(--color-text-primary);
+}
+
+[data-theme="dark"] {
+  --color-page-bg: #0f0d0c;
+  --color-panel-bg: #1a1614;
+  --color-prompt-bg: #1e1a18;
+  --color-surface: #282422;
+  --color-surface-elevated: #322e2b;
+  --color-surface-muted: rgba(255, 255, 255, 0.05);
+  --color-border: rgba(255, 255, 255, 0.07);
+  --color-border-strong: rgba(255, 255, 255, 0.14);
+  --color-text-primary: #f8f4f0;
+  --color-text-secondary: #d4cdc6;
+  --color-text-muted: #a39a92;
+  --color-text-subtle: #857c75;
+  --color-text-placeholder: #6b635d;
+  --color-icon: #a39a92;
+  --color-icon-action: #d4cdc6;
+  --color-skeleton: #2a2624;
+  --color-skeleton-shine: #383430;
+  --color-dropdown-hover: #383430;
+  --color-thumbnail-bg: #2a2624;
+  --color-empty-bg: rgba(40, 36, 34, 0.85);
+  --color-empty-border: rgba(255, 255, 255, 0.12);
+  --color-shadow: rgba(0, 0, 0, 0.55);
+  --color-prompt-shadow: rgba(0, 0, 0, 0.28);
+  --color-panel-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 8px 32px rgba(0, 0, 0, 0.35);
+  --color-accent: #e89a82;
+  --color-accent-start: #e89a82;
+  --color-accent-end: #d48465;
+  --color-accent-shadow: rgba(226, 149, 120, 0.22);
+  --color-prompt-outline: rgba(248, 244, 240, 0.2);
+  --color-history-bar-bg: #1a1614;
+  --color-history-bar-border: rgba(255, 255, 255, 0.07);
+  --color-history-divider: rgba(255, 255, 255, 0.08);
+  --color-nav-progress-bg: #322e2b;
+  --color-nav-progress-border: rgba(255, 255, 255, 0.08);
+  --color-nav-progress-fill: #d48465;
+  --color-nav-icon: #f8f4f0;
+  --color-nav-icon-muted: #857c75;
+  --color-header-border: rgba(255, 255, 255, 0.06);
+  --color-image-border: rgba(255, 255, 255, 0.08);
+  --color-logo: #f8f4f0;
+  --color-focus-ring: rgba(232, 154, 130, 0.5);
+  --color-tab-track-bg: #282422;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --space-page-x: 2rem;
+    --space-section: 1.5rem;
+  }
+}

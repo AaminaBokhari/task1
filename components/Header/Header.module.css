@@ -1,0 +1,176 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-page-bg);
+  border-bottom: 1px solid var(--color-header-border);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+.nav {
+  display: none;
+  justify-content: center;
+}
+
+.navStack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.625rem;
+  min-width: 14rem;
+}
+
+.progressTrack {
+  position: relative;
+  width: 100%;
+  height: 0.4375rem;
+  border-radius: 999px;
+  background: var(--color-nav-progress-bg);
+  border: 1px solid var(--color-nav-progress-border);
+  overflow: hidden;
+}
+
+.progressFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--color-nav-progress-fill);
+  transition: width 0.25s ease;
+}
+
+.navIcons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-nav-icon-muted);
+  transition: color 0.2s, opacity 0.2s;
+}
+
+.navItem:hover {
+  color: var(--color-nav-icon);
+}
+
+.navItemActive {
+  color: var(--color-nav-icon);
+}
+
+.navIcon {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+}
+
+.actionLink {
+  display: none;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.625rem;
+  border-radius: 0.625rem;
+  font-size: 0.8125rem;
+  color: var(--color-icon-action);
+  transition: color 0.2s;
+}
+
+.actionLink:hover {
+  color: var(--color-text-primary);
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.625rem;
+  color: var(--color-icon-action);
+  transition: color 0.2s, background 0.2s;
+}
+
+.iconButton:hover {
+  color: var(--color-text-primary);
+  background: var(--color-surface-muted);
+}
+
+.avatar {
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 999px;
+  object-fit: cover;
+  margin-left: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .actionLink {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+
+  .navStack {
+    min-width: 16rem;
+  }
+
+  .navIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    padding: 1.125rem 2rem;
+  }
+
+  .navStack {
+    min-width: 18rem;
+    gap: 0.75rem;
+  }
+
+  .progressTrack {
+    height: 0.5rem;
+  }
+
+  .navIcon {
+    width: 1.625rem;
+    height: 1.625rem;
+  }
+}

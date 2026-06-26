@@ -1,0 +1,32 @@
+.workspace {
+  flex: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .workspace {
+    padding: 0 2rem 3.5rem;
+  }
+
+  .main {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main {
+    gap: 1.75rem;
+  }
+}
