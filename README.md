@@ -48,24 +48,9 @@ lib/
   theme.js             # Theme persistence helpers
 ```
 
-## API
 
-### `POST /api/generate`
 
-```json
-{
-  "type": "image",
-  "count": 8,
-  "prompt": "A portrait...",
-  "model": "Flux Pro"
-}
-```
 
-Returns `{ prompt, model, type, items[] }` where each item is an image (`/generated/portrait-*.png`) or video (sample MP4 + poster).
-
-### `GET /api/history`
-
-Returns `{ items[] }` of landscape thumbnail URLs for the history bar.
 
 ## Responsiveness
 
